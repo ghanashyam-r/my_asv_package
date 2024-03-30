@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- Run gazebo to simulate robot -->
+    <include file="$(find ASV_CATAM_URDF_ASSEMBLY)/launch/spawn.launch"/> 
+    <include file="$(find ASV_CATAM_URDF_ASSEMBLY)/launch/display.launch" />
+    <include file="$(find out_door_nav)/launch/start_map.launch" />
+    <include file="$(find ASV_CATAM_URDF_ASSEMBLY)/launch/localization_run_sim.launch"/>
+    <!-- <include file="$(find husky_navigation)/launch/gmapping.launch" /> -->
+    <include file="$(find husky_navigation)/launch/move_base.launch" />
+
+
+</launch>

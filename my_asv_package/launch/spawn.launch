@@ -1,0 +1,15 @@
+<launch>
+  <arg name="x" default="0"/>
+  <arg name="y" default="0"/>
+  <arg name="z" default="0.1"/>
+  <param command="$(find xacro)/xacro $(find ASV_CATAM_URDF_ASSEMBLY)/urdf/ASV_CATAM_URDF_ASSEMBLY.urdf" name="robot_description"/>
+  <node args="-param robot_description -urdf -model iboat -x $(arg x) -y $(arg y) -z $(arg z)" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <!-- <arg name="world_name" value="worlds/underwater.world" /> -->
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+</launch>

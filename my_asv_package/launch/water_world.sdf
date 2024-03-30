@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <world name="simple_world">
+    <model name="ground">
+      <link name="body">
+        <!-- Define ground plane -->
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <!-- Apply water texture -->
+          <material>
+            <script>
+              <uri>file://downloads/Water-Texture.jpg</uri>
+              <name>Gazebo/Water</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <model name="box">
+      <pose>0 0 1 0 0 0</pose>
+      <link name="body">
+        <!-- Define box -->
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+          <!-- Apply material -->
+          <material>
+            <script>
+              <name>Gazebo/Water</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <!-- Add other models here -->
+  </world>
+</sdf>
